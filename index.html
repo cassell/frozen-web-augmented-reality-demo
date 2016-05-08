@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Frozen Augmented Reality Example</title>
+    <link rel="stylesheet" href="css/main.css" type="text/css"/>
+    <script>
+        var webcam = true;
+        var backupVideo = 'video/test.mov';
+        var puppets = {
+            30: {
+                'name': 'Sven',
+                'image': 'images/sven.jpg',
+                'audio': 'audio/sven.mp3'
+            },
+            215: {
+                'name': 'Olaf',
+                'image': 'images/olaf.jpg',
+                'audio': 'audio/olaf.mp3'
+            },
+            230: {
+                'name': 'Anna',
+                'image': 'images/anna.jpg',
+                'audio': 'audio/do-you-want-to-build-a-snowman.mp3'
+            },
+            273: {
+                'name': 'Elsa',
+                'image': 'images/elsa.jpg',
+                'audio': 'audio/let-it-go.mp3'
+            }
+        };
+    </script>
+
+    <script src='js/lib/jquery/jquery-2.2.3.js'></script>
+
+    <!-- include three.js -->
+    <script src='js/lib/threejs/three.js'></script>
+
+    <!-- include js-aruco -->
+    <script src='js/lib/js-aruco/svd.js'></script>
+    <script src='js/lib/js-aruco/posit1-patched.js'></script>
+    <script src='js/lib/js-aruco/cv.js'></script>
+    <script src='js/lib/js-aruco/aruco.js'></script>
+
+    <!-- threex -->
+    <script src='js/lib/threex/threex.webcamgrabbing.js'></script>
+    <script src='js/lib/threex/threex.jsarucomarker.js'></script>
+
+    <script src='js/frozen-ar.js'></script>
+</head>
+<body>
+</body>
+</html>
