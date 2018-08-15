@@ -6,14 +6,13 @@ var backupVideo = backupVideo || {};
 $(document).ready(function(){
 
     var hasGetUserMedia = (navigator.getUserMedia || navigator.webkitGetUserMedia || navigator.mozGetUserMedia || navigator.msGetUserMedia) ? true : false
-    var hasMediaStreamTrackSources = MediaStreamTrack.getSources ? true : false
     var hasWebGL = ( function () { try { var canvas = document.createElement( 'canvas' ); return !! ( window.WebGLRenderingContext && ( canvas.getContext( 'webgl' ) || canvas.getContext( 'experimental-webgl' ) ) ); } catch ( e ) { return false; } } )()
 
     if( hasWebGL === false ){
         alert("Your browser doesn't support navigator.getUserMedia()");
         return;
-    } else if( hasMediaStreamTrackSources === false ){
-        alert("Your browser doesn't support MediaStreamTrack.getSources()");
+    } else if( MediaDevices.enumerateDevices === false ){
+        alert("Your browser doesn't support MediaDevices.enumerateDevices()");
         return;
     } else if( hasGetUserMedia === false ){
         alert("Your browser doesn't support navigator.getUserMedia()");
@@ -32,7 +31,7 @@ $(document).ready(function(){
     var onRenderFunctions = [];
 
     // init scene and camera
-    var scene = new THREE.Scene()
+    var scene = new THREE.Scene();
     var camera	= new THREE.PerspectiveCamera(40, window.innerWidth / window.innerHeight, 0.01, 1000);
     camera.position.z = 2;
 
